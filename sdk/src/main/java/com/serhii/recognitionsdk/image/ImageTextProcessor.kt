@@ -4,7 +4,10 @@ import android.net.Uri
 import com.serhii.recognitionsdk.data.FaceRecognitionResult
 import com.serhii.recognitionsdk.data.TextRecognitionResult
 
-interface ImageTextProcessor {
+/**
+ * Responsible for text recognition
+ */
+internal interface ImageTextProcessor {
 
     fun retrieveText(uri: Uri): TextRecognitionResult
 

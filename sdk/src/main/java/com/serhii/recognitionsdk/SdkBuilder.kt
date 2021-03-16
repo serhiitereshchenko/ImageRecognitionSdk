@@ -7,12 +7,28 @@ import com.serhii.recognitionsdk.image.AWSRecognitionFaceProcessor
 import com.serhii.recognitionsdk.image.MlKitImageTextProcessor
 import java.lang.IllegalArgumentException
 
+/**
+ * Builder class that should be used to create {@link com.serhii.recognitionsdk.VeriffSdk} instance
+ */
 class SdkBuilder {
 
+    /**
+     * Application context
+     */
     var context: Context? = null
         private set
+
+    /**
+     * AWS access key
+     * @see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html">How to retrieve AWS credentials</a>
+     */
     var awsAccessKey: String? = null
         private set
+
+    /**
+     * AWS secret key
+     * @see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/setting-up.html">How to retrieve AWS credentials</a>
+     */
     var awsSecretKey: String? = null
         private set
 
@@ -24,7 +40,6 @@ class SdkBuilder {
     }
 
     fun build(): VeriffSdk {
-        if (context == null) throw IllegalArgumentException("Context must not be null")
         if (awsAccessKey.isNullOrEmpty() || awsAccessKey.isNullOrEmpty()) throw IllegalArgumentException(
             "AWS credentials must be valid"
         )

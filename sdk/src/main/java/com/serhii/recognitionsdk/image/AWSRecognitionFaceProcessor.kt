@@ -13,7 +13,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.nio.ByteBuffer
 
-class AWSRecognitionFaceProcessor(
+internal class AWSRecognitionFaceProcessor(
     private val context: Context,
     accessKey: String?,
     secretKey: String?
