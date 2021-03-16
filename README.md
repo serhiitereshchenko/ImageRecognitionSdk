@@ -15,12 +15,14 @@ val result = sdk.retrieveText(photoUri)
 
 ## Build sample project
 
-Before building project please set your AWS account credentials in your gradle.properties file:
+Before building project please set your AWS account credentials in your `gradle.properties` file:
 
 ```
 awsApiKey="AKIASB6L3YQ263FRGA2T"
 awsSecretKey="hSx05RgbKzPt/7qsoTjtXppJ/7VbEkGrEi3OgkIQ"
 ```
+
+As `gradle.properties` are not included in this project please add `android.useAndroidX=true` to your file to support androidX dependencies.
 
 No other additional steps are required to build the project. Just open it in your favourite IDE and run.
 
