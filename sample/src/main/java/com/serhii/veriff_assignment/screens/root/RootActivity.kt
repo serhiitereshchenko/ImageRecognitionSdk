@@ -1,7 +1,7 @@
 package com.serhii.veriff_assignment.screens.root
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.serhii.veriff_assignment.R
 import com.serhii.veriff_assignment.screens.recognize.RecognizeFragment
 import dagger.hilt.android.AndroidEntryPoint

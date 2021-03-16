@@ -1,7 +1,6 @@
 package com.serhii.veriff_assignment.screens.recognize
 
 import android.net.Uri
-import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,8 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.serhii.veriff_assignment.data.repository.RecognitionRepository
 import com.serhii.veriff_assignment.mvvm.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class RecognizeViewModel @Inject constructor(private val recognitionRepository: RecognitionRepository) :

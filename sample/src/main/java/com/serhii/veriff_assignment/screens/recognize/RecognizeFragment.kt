@@ -19,11 +19,11 @@ import com.serhii.veriff_assignment.databinding.RecognizeFragmentBinding
 import com.serhii.veriff_assignment.mvvm.Resource
 import com.serhii.veriff_assignment.mvvm.succeeded
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Date
+import timber.log.Timber
 
 @AndroidEntryPoint
 class RecognizeFragment : Fragment() {
