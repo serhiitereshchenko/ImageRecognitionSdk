@@ -3,6 +3,7 @@ package com.serhii.veriff_assignment.screens.recognize
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.serhii.veriff_assignment.data.repository.RecognitionRepository
@@ -11,11 +12,21 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 
+private const val PHOTO_URI = "uri"
+
 @HiltViewModel
-class RecognizeViewModel @Inject constructor(private val recognitionRepository: RecognitionRepository) :
+class RecognizeViewModel @Inject constructor(
+    private val recognitionRepository: RecognitionRepository,
+    private val state: SavedStateHandle
+) :
     ViewModel() {
 
-    lateinit var currentPhotoUri: Uri
+    var currentPhotoUri: Uri? = null
+        set(value) {
+            state[PHOTO_URI] = value
+            field = value
+        }
+        get() = state.get<Uri>(PHOTO_URI)
 
     // Loading indicator
     private val _loading = MutableLiveData<Boolean>()
@@ -34,10 +45,12 @@ class RecognizeViewModel @Inject constructor(private val recognitionRepository: 
     val recognizedFaces: LiveData<Resource<Int>> = _recognizedFaces
 
     fun onImageLoaded() {
-        _image.value = Resource.Success(currentPhotoUri)
-        _loading.value = true
-        processText(currentPhotoUri)
-        processFaces(currentPhotoUri)
+        currentPhotoUri?.let {
+            _image.value = Resource.Success(it)
+            _loading.value = true
+            processText(it)
+            processFaces(it)
+        }
     }
 
     fun onImageLoadFailed() {

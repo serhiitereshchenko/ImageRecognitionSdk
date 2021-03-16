@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.serhii.veriff_assignment.R
 import com.serhii.veriff_assignment.databinding.RecognizeFragmentBinding
@@ -30,7 +30,7 @@ class RecognizeFragment : Fragment() {
 
     private var _binding: RecognizeFragmentBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: RecognizeViewModel
+    private val viewModel: RecognizeViewModel by viewModels()
 
     private val cameraFileHelper: CameraFileHelper by lazy { CameraFileHelper(requireContext()) }
     private val takePictureCallback =
@@ -54,7 +54,6 @@ class RecognizeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RecognizeViewModel::class.java)
         observeLoadingIndicator()
         observeImage()
         observeRecognizedText()
