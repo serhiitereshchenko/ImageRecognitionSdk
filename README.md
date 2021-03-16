@@ -13,6 +13,8 @@ val sdk = SdkBuilder()
 val result = sdk.retrieveText(photoUri)
 ```
 
+Please note that all SDK functions are executed on the caller thread. Don't use main thread for this.
+
 ## Build sample project
 
 Before building project please set your AWS account credentials in your `gradle.properties` file:
