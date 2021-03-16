@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">VeriffAssignment</string>
+
+    <string name="recognize_take_photo">Take photo</string>
+    <string name="recognize_no_faces">No face on photo</string>
+    <string name="recognize_one_face">One face on photo</string>
+    <string name="recognize_more_then_one_face">More then one face on photo</string>
+
+    <string name="error_getting_image">Error while getting image</string>
+    <string name="error_processing_text">Error while processing text</string>
+    <string name="error_processing_faces">Error while processing faces</string>
+
+</resources>

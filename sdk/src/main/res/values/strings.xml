@@ -1,0 +1,4 @@
+<resources>
+    <string name="sdk_name">VeriffSdk</string>
+    <string name="error_camera_permission_not_granted">Error. Please grant camera permission</string>
+</resources>
