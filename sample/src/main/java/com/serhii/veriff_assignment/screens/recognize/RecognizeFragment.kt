@@ -124,9 +124,11 @@ class RecognizeFragment : Fragment() {
     }
 }
 
-private const val FILE_PROVIDER_AUTHORITY = "com.serhii.veriff_assignment"
-
 class CameraFileHelper(private val context: Context) {
+
+    companion object {
+        private const val FILE_PROVIDER_AUTHORITY = "com.serhii.veriff_assignment"
+    }
 
     @SuppressLint("SimpleDateFormat")
     @Throws(IOException::class)

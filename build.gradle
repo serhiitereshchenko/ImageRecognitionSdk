@@ -2,7 +2,6 @@
 buildscript {
     ext.kotlin_version = "1.4.31"
     ext.lifecycle_version = "2.3.0"
-    ext.camerax_version = "1.1.0-alpha02"
     ext.hilt_version = "2.33-beta"
     ext.glide_version = "4.11.0"
 
