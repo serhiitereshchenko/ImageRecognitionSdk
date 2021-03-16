@@ -22,7 +22,7 @@ awsApiKey="AKIASB6L3YQ263FRGA2T"
 awsSecretKey="hSx05RgbKzPt/7qsoTjtXppJ/7VbEkGrEi3OgkIQ"
 ```
 
-As `gradle.properties` are not included in this project please add `android.useAndroidX=true` to your file to support androidX dependencies.
+As `gradle.properties` is not included in this project please add `android.useAndroidX=true` to your file to support `androidX` dependencies.
 
 No other additional steps are required to build the project. Just open it in your favourite IDE and run.
 
