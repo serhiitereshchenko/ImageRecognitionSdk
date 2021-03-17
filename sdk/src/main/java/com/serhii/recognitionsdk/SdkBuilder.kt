@@ -40,7 +40,7 @@ class SdkBuilder {
     }
 
     fun build(): VeriffSdk {
-        if (awsAccessKey.isNullOrEmpty() || awsAccessKey.isNullOrEmpty()) throw IllegalArgumentException(
+        if (awsAccessKey.isNullOrEmpty() || awsSecretKey.isNullOrEmpty()) throw IllegalArgumentException(
             "AWS credentials must be valid"
         )
 
