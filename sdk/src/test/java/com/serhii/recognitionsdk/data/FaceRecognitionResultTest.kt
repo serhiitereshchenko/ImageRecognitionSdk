@@ -1,6 +1,5 @@
 package com.serhii.recognitionsdk.data
 
-import com.serhii.recognitionsdk.data.FaceRecognitionResult
 import org.junit.Test
 
 class FaceRecognitionResultTest {
