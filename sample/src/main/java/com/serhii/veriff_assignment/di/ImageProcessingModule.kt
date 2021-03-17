@@ -1,6 +1,7 @@
 package com.serhii.veriff_assignment.di
 
 import android.content.Context
+import android.text.TextUtils
 import com.serhii.recognitionsdk.SdkBuilder
 import com.serhii.recognitionsdk.VeriffSdk
 import com.serhii.veriff_assignment.BuildConfig
@@ -10,6 +11,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Qualifier
+
+private const val SAFE_KEY = "safeKey"
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -32,11 +35,14 @@ class ImageProcessingModule {
         @ApplicationContext context: Context,
         @AWSApiKey awsApiKey: String,
         @AWSSecretKey awsSecretKey: String
-    ): VeriffSdk =
-        SdkBuilder()
+    ): VeriffSdk {
+        val safeApiKey = if (TextUtils.isEmpty(awsApiKey)) SAFE_KEY else awsApiKey
+        val safeSecretKey = if (TextUtils.isEmpty(awsSecretKey)) SAFE_KEY else awsSecretKey
+        return SdkBuilder()
             .context(context)
-            .awsCredentials(awsApiKey, awsSecretKey)
+            .awsCredentials(safeApiKey, safeSecretKey)
             .build()
+    }
 }
 
 @Qualifier

@@ -18,8 +18,7 @@ private const val PHOTO_URI = "uri"
 class RecognizeViewModel @Inject constructor(
     private val recognitionRepository: RecognitionRepository,
     private val state: SavedStateHandle
-) :
-    ViewModel() {
+) : ViewModel() {
 
     var currentPhotoUri: Uri? = null
         set(value) {
