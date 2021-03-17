@@ -20,8 +20,8 @@ Please note that all SDK functions are executed on the caller thread. Don't use 
 Before building project please set your AWS account credentials in your `gradle.properties` file:
 
 ```
-awsApiKey="AKIASB6L3YQ263FRGA2T"
-awsSecretKey="hSx05RgbKzPt/7qsoTjtXppJ/7VbEkGrEi3OgkIQ"
+awsApiKey="value"
+awsSecretKey="value"
 ```
 
 As `gradle.properties` is not included in this project please add `android.useAndroidX=true` to your file to support `androidX` dependencies.
